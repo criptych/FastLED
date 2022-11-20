@@ -1,6 +1,8 @@
 #pragma once
 #pragma message "ESP32 Hardware SPI support added"
 
+#include <SPI.h>
+
 FASTLED_NAMESPACE_BEGIN
 
 /*
@@ -49,7 +51,7 @@ FASTLED_NAMESPACE_BEGIN
     #define FASTLED_ESP32_SPI_BUS VSPI
 #endif
 
-SPIClass ledSPI(FASTLED_ESP32_SPI_BUS);
+extern SPIClass ledSPI;
 
 #if FASTLED_ESP32_SPI_BUS == VSPI
     static uint8_t spiClk = 18;
